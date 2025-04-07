@@ -1,4 +1,6 @@
-package com.example.spring_boot.logic;
+package com.connect_4.game_player.service;
+
+import com.connect_4.game_player.model.PlayerEnum;
 
 public class Services {
     public static PlayerEnum getNextPlayer(PlayerEnum player){

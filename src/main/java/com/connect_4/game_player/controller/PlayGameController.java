@@ -1,14 +1,14 @@
-package com.example.spring_boot.controllers;
+package com.connect_4.game_player.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.spring_boot.logic.Board;
-import com.example.spring_boot.logic.GamePlayer;
-import com.example.spring_boot.logic.MiniMax;
-import com.example.spring_boot.logic.Player;
-import com.example.spring_boot.logic.PlayerTypeEnum;
+import com.connect_4.game_player.model.PlayerTypeEnum;
+import com.connect_4.game_player.service.Board;
+import com.connect_4.game_player.service.GamePlayer;
+import com.connect_4.game_player.service.MiniMax;
+import com.connect_4.game_player.service.Player;
 
 @RestController
 public class PlayGameController {

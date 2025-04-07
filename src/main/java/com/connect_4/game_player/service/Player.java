@@ -1,8 +1,11 @@
-package com.example.spring_boot.logic;
+package com.connect_4.game_player.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.connect_4.game_player.model.PlayerEnum;
+
 import java.util.Collections;
 
 public abstract class Player extends HeuristicScore {

@@ -1,8 +1,11 @@
-package com.example.spring_boot.logic;
+package com.connect_4.game_player.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.connect_4.game_player.model.GameStatusEnum;
+import com.connect_4.game_player.model.PlayerEnum;
 
 public class MiniMax extends Player{
 

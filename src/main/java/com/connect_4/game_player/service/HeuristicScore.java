@@ -1,4 +1,4 @@
-package com.example.spring_boot.logic;
+package com.connect_4.game_player.service;
 
 /*
 Heuristic Score
@@ -6,6 +6,8 @@ Takes in a board (6x7 Array of Strings), the player ("X" or "O") an agent's type
 */
 
 import java.lang.Math;
+
+import com.connect_4.game_player.model.PlayerEnum;
 
 public class HeuristicScore {
 

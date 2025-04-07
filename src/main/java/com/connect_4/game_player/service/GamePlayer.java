@@ -1,4 +1,7 @@
-package com.example.spring_boot.logic;
+package com.connect_4.game_player.service;
+
+import com.connect_4.game_player.model.GameStatusEnum;
+import com.connect_4.game_player.model.PlayerEnum;
 
 public class GamePlayer {
 
