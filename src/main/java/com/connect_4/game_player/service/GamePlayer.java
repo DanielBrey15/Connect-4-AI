@@ -1,5 +1,7 @@
 package com.connect_4.game_player.service;
 
+import java.util.ArrayList;
+
 import com.connect_4.game_player.model.GameStatusEnum;
 import com.connect_4.game_player.model.PlayerEnum;
 
@@ -8,6 +10,7 @@ public class GamePlayer {
   protected Board board;
   protected Player p1;
   protected Player p2;
+  protected ArrayList<Board> boardCollection;
   protected Player activePlayer;
 
   public GamePlayer(Board board, Player p1, Player p2) {
@@ -15,14 +18,16 @@ public class GamePlayer {
     this.board = board;
     this.p1 = p1;
     this.p2 = p2;
+    this.boardCollection = new ArrayList<Board>();
   }
 
-  public void run() {
+  public ArrayList<Board> run() {
     PlayerEnum currentPlayer = null;
     GameStatusEnum gameStatus = board.gameStatus();
     while (gameStatus == GameStatusEnum.ONGOING) {
       System.out.print("Turn: " + currentPlayer + "\n");
       currentPlayer = updatePlayer();
+      boardCollection.add(board);
       board.printBoard();
 
       Board selectedMove = activePlayer.selectMove(board, currentPlayer);
@@ -38,6 +43,7 @@ public class GamePlayer {
     } else {
       System.out.println("Draw!");
     }
+    return boardCollection;
   }
 
   private PlayerEnum updatePlayer() {

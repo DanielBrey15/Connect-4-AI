@@ -16,7 +16,7 @@ public enum PlayerEnum {
 
   EMPTY {
     public String toString() {
-      return "-";
+      return "--";
     }
   },
 }

@@ -141,6 +141,16 @@ public class Board{
 		return GameStatusEnum.ONGOING;
 	}
 
+  public String renderHTMLBoard(){
+    var boardString = "";
+    for(int i = 0; i < height; i ++){
+      for(int j = 0; j < width; j ++){
+        boardString += (board[i][j] + " ");
+      }
+      boardString += "<br/>";
+    }
+    return boardString;
+  }
 
   public void printBoard(){
     for(int i = 0; i < height; i ++){
