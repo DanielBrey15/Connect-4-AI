@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to Connect 4!</title>
+</head>
+<body>
+    <h1>Array of Strings:</h1>
+    <ul>
+        <li th:each="str : ${strings}" th:utext="${str}" style="list-style-type:none;margin-top:25px;"></li>
+    </ul>
+</body>
+</html>

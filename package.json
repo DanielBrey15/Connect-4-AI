@@ -1,0 +1,10 @@
+{
+    "name": "connect-4-project",
+    "private": true,
+    "scripts": {
+        "start": "concurrently \"npm run start --prefix react-app\" \"npm run start --prefix spring-boot-app\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

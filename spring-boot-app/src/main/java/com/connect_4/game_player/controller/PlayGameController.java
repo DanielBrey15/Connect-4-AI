@@ -3,7 +3,9 @@ package com.connect_4.game_player.controller;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +16,8 @@ import com.connect_4.game_player.service.GamePlayer;
 import com.connect_4.game_player.service.MiniMax;
 import com.connect_4.game_player.service.Player;
 
-@Controller
+@RestController
+@RequestMapping("/api")
 public class PlayGameController {
     @GetMapping("/runGame")
     public String runGame(
@@ -32,13 +35,17 @@ public class PlayGameController {
         
         try{
             var boardCollection = gamePlayer.run();
-            model.addAttribute("strings", boardCollection.stream()
+            return String.join("<br/><br/>", boardCollection.stream()
                 .map(Board::renderHTMLBoard)
-                .collect(Collectors.toCollection(ArrayList::new)));
-                return "index";
+                .collect(Collectors.toCollection(ArrayList::new))
+            );
+            // model.addAttribute("strings", boardCollection.stream()
+            //     .map(Board::renderHTMLBoard)
+            //     .collect(Collectors.toCollection(ArrayList::new)));
+            // return "index";
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "index";
+        return ""; //"index"
     }
 }

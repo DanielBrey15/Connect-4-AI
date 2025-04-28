@@ -1,0 +1,7 @@
+{
+    "name": "spring-boot-app",
+    "private": true,
+    "scripts": {
+      "start": "./mvnw spring-boot:run"
+    }
+  }
